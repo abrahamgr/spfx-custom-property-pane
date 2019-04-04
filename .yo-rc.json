@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.7.1",
+    "libraryName": "spfx-custom-property-pane",
+    "libraryId": "6707627c-e068-4dfd-8a09-6f512ebd72f8",
+    "environment": "spo",
+    "packageManager": "pnpm",
+    "isCreatingSolution": true,
+    "componentType": "webpart"
+  }
+}
