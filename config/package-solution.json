@@ -4,7 +4,10 @@
     "name": "spfx-custom-property-pane-client-side-solution",
     "id": "6707627c-e068-4dfd-8a09-6f512ebd72f8",
     "version": "1.0.0.0",
-    "includeClientSideAssets": true
+    "includeClientSideAssets": true,
+    "supportedLocales": [
+      "en-us"
+    ]
   },
   "paths": {
     "zippedPackage": "solution/spfx-custom-property-pane.sppkg"
