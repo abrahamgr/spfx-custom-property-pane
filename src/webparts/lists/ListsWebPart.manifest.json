@@ -20,7 +20,7 @@
     "description": { "default": "Displays total items for each list" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "Lists"
+      "lists": []
     }
   }]
 }

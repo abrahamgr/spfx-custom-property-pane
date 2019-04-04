@@ -4,24 +4,24 @@ import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'ListsWebPartStrings';
 import Lists from './components/Lists';
 import { IListsProps } from './components/IListsProps';
+import MultipleListPane, {} from "../../components/multiple-list-pane/MultipleListPane";
+import { ISPList } from "../../components/multiple-list-pane/IMultipleListPaneProps";
 
 export interface IListsWebPartProps {
-  description: string;
+  lists: ISPList[];
 }
 
 export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartProps> {
 
   public render(): void {
     const element: React.ReactElement<IListsProps > = React.createElement(
-      Lists,
-      {
-        description: this.properties.description
+      Lists, {
+        lists: []
       }
     );
 
@@ -47,8 +47,8 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                new MultipleListPane("lists", {
+                  label: "Add list"
                 })
               ]
             }

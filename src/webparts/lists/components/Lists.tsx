@@ -1,24 +1,29 @@
 import * as React from 'react';
 import styles from './Lists.module.scss';
 import { IListsProps } from './IListsProps';
-import { escape } from '@microsoft/sp-lodash-subset';
+import { IListState } from "./IListsState";
 
-export default class Lists extends React.Component<IListsProps, {}> {
+export default class Lists extends React.Component<IListsProps, IListState> {
+  
+  constructor(props: IListsProps){
+    super(props);
+    this.state = {
+      lists: []
+    };
+  }
+  
   public render(): React.ReactElement<IListsProps> {
     return (
       <div className={ styles.lists }>
-        <div className={ styles.container }>
-          <div className={ styles.row }>
-            <div className={ styles.column }>
-              <span className={ styles.title }>Welcome to SharePoint!</span>
-              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
-              <p className={ styles.description }>{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={ styles.button }>
-                <span className={ styles.label }>Learn more</span>
-              </a>
-            </div>
-          </div>
-        </div>
+        <h4>Lists</h4>
+        <ul>
+          {this.state.lists.map((list, idx) => 
+            <li key={`li_${idx}`}>
+              <span>{list.title}</span>
+              <span className={styles.total}>{list.totalItems}</span>
+            </li>
+            )}
+        </ul>
       </div>
     );
   }
