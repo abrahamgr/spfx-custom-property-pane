@@ -22,7 +22,9 @@ export default class MultipleListPane implements IPropertyPaneField<IMultipleLis
         this.properties = {
             key: `${targetProperty}_${(new Date()).getSeconds()}`,
             onRender: this.onRender.bind(this),
-            label: properties.label
+            label: properties.label,
+            lists : properties.lists,
+            getLists: properties.getLists
         };
     }
 
@@ -37,7 +39,9 @@ export default class MultipleListPane implements IPropertyPaneField<IMultipleLis
             this.elem = elem;
         
         const component = React.createElement<IMultipleListProps>(MultipleList, {
-            title: this.properties.label
+            title: this.properties.label,
+            lists: this.properties.lists,
+            getLists: this.properties.getLists
         });
 
         ReactDOM.render(component, this.elem);

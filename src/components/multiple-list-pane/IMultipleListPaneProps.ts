@@ -10,6 +10,8 @@ export interface ISPList{
 
 export interface IMultipleListPaneProps {
     label: string;
+    lists: ISPList[];
+    getLists: () => Promise<ISPList[]>;
 }
 
 export interface ImultipleListPaneInternalProps extends IMultipleListPaneProps, IPropertyPaneCustomFieldProps  {

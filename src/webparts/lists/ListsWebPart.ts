@@ -11,12 +11,20 @@ import Lists from './components/Lists';
 import { IListsProps } from './components/IListsProps';
 import MultipleListPane, {} from "../../components/multiple-list-pane/MultipleListPane";
 import { ISPList } from "../../components/multiple-list-pane/IMultipleListPaneProps";
+import { ListProvider } from "../../providers/ListProvider";
 
 export interface IListsWebPartProps {
   lists: ISPList[];
 }
 
 export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartProps> {
+
+  private _provider: ListProvider;
+
+  public onInit(): Promise<void>{
+    this._provider = new ListProvider(this.context);
+    return super.onInit();
+  }
 
   public render(): void {
     const element: React.ReactElement<IListsProps > = React.createElement(
@@ -36,6 +44,10 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
     return Version.parse('1.0');
   }
 
+  private _getLists(): Promise<ISPList[]>{
+    return this._provider.getLists();
+  }
+
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -48,7 +60,9 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
               groupName: strings.BasicGroupName,
               groupFields: [
                 new MultipleListPane("lists", {
-                  label: "Add list"
+                  label: "Add list",
+                  lists: this.properties.lists,
+                  getLists: this._getLists.bind(this)
                 })
               ]
             }
