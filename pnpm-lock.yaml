@@ -3,10 +3,15 @@ dependencies:
   '@microsoft/sp-lodash-subset': 1.7.1
   '@microsoft/sp-office-ui-fabric-core': 1.7.1
   '@microsoft/sp-webpart-base': 1.7.1
+  '@pnp/common': 1.3.1
+  '@pnp/logging': 1.3.1
+  '@pnp/odata': 1.3.1
+  '@pnp/sp': 1.3.1
   '@types/es6-promise': 0.0.33
   '@types/react': 16.4.2
   '@types/react-dom': 16.0.5
   '@types/webpack-env': 1.13.1
+  office-ui-fabric-react: 5.132.0
   react: 16.3.2
   react-dom: 16.3.2
 devDependencies:
@@ -665,6 +670,38 @@ packages:
     dev: true
     resolution:
       integrity: sha512-bdozNnQXIKZgT3fjCcOYSZSpH7zuh+Turv8uQxzXTj5G8AzgTJ/X3GnrYDbliXKgefL8LJeIj4vwdrOnt1J+Ng==
+  /@pnp/common/1.3.1:
+    dependencies:
+      adal-angular: 1.0.17
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-YsgBtpOJolRZpZZasWf6Dj4mS5QGAnxU/0s5jgwCQZT22Lf5IhxXC2R9/fURa/DI2742i9dCED6lQGDqoEz7rA==
+  /@pnp/logging/1.3.1:
+    dependencies:
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-wIYcdNOjM6DSkWYtyGNwVe35JdVF9F58DTrdGQ40TRf5wJ9R8/bZQfq7KKJ4qYeHAOvjRT4DZwUi0Jaf+6bycg==
+  /@pnp/odata/1.3.1:
+    dependencies:
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      '@pnp/common': 1.3.1
+      '@pnp/logging': 1.3.1
+    resolution:
+      integrity: sha512-LtFOjQ8psB5IxN75q/klQ2c2OuoRtBA69adipru5giBxwbOaqbgNzObz6SH7hEr4KYbtL6//hpRof7JoSpyelA==
+  /@pnp/sp/1.3.1:
+    dependencies:
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      '@pnp/common': 1.3.1
+      '@pnp/logging': 1.3.1
+      '@pnp/odata': 1.3.1
+    resolution:
+      integrity: sha512-V0LcvymWFHNl/6dRd6uSyL47QsT8miRLMEJr3KtqZiXtgZ2Uwu2VKUwsDsUplnmMRrBv57b2ogm/6S843oZo2w==
   /@pnpm/link-bins/1.0.3_@pnpm+logger@1.0.2:
     dependencies:
       '@pnpm/logger': 1.0.2
@@ -988,6 +1025,13 @@ packages:
   /@types/z-schema/3.16.31:
     resolution:
       integrity: sha1-LrHQCl5Ow/pYx2r94S4YK2bcXBw=
+  /@uifabric/icons/5.8.0:
+    dependencies:
+      '@uifabric/styling': 5.37.0
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-EUhKxYlIPJshg4fQvCNTYSk0p7RhzEWeEAJBV4sao1SKmN0/pZBnkLbDqWjU5VUfdwZZYiIdaLRpM+pyzhniZw==
   /@uifabric/icons/5.8.0_react-dom@16.3.2+react@16.3.2:
     dependencies:
       '@uifabric/styling': 5.37.0_react-dom@16.3.2+react@16.3.2
@@ -1002,6 +1046,15 @@ packages:
       tslib: 1.9.3
     resolution:
       integrity: sha512-4/EtO6Ns7kNtKxC+6InShwVQeNQEDT5H8Ex7m/i4OrT9i7csje4YwBQPkkpm31qJwEZEyD7bbAwyLezI63sLhg==
+  /@uifabric/styling/5.37.0:
+    dependencies:
+      '@microsoft/load-themed-styles': 1.8.78
+      '@uifabric/merge-styles': 5.17.1
+      '@uifabric/utilities': 5.34.2
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-3hC0itW/hWSD5J4uANzUKk8XVGWUNkU+VLjEjWsQ6i5lvwFGaanR6Qy0bTkZdFGqFWMXe91CkBHV7HnvEx7tCA==
   /@uifabric/styling/5.37.0_react-dom@16.3.2+react@16.3.2:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.78
@@ -1013,6 +1066,17 @@ packages:
       react-dom: '*'
     resolution:
       integrity: sha512-3hC0itW/hWSD5J4uANzUKk8XVGWUNkU+VLjEjWsQ6i5lvwFGaanR6Qy0bTkZdFGqFWMXe91CkBHV7HnvEx7tCA==
+  /@uifabric/utilities/5.34.2:
+    dependencies:
+      '@uifabric/merge-styles': 5.17.1
+      prop-types: 15.7.2
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      react: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+      react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+    resolution:
+      integrity: sha512-7LDHamnrKpY49S49Nzu1YMTuBtZIgTsQd9AuWTvXlUevD67ZyjSRnhCKlKVZHwe/Vi0jWLIodbup4p5IyRGWoQ==
   /@uifabric/utilities/5.34.2_react-dom@16.3.2+react@16.3.2:
     dependencies:
       '@uifabric/merge-styles': 5.17.1
@@ -1118,6 +1182,12 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-4rwxvHEqr/ugU6pN1GvITrXSCQ8=
+  /adal-angular/1.0.17:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-bpNuDkH5HTsqiOf/ypwvb29WLMQ=
   /after/0.8.2:
     dev: true
     resolution:
@@ -7317,6 +7387,21 @@ packages:
       react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
     resolution:
       integrity: sha512-QOYu1uf92qhTTIlBAj8teKvRpCmpliRZjynYtgeeUbDm4C4GtXdb/O1rPNFsfT0PNtPC8dCNeQ7/CXjQenUkyw==
+  /office-ui-fabric-react/5.132.0:
+    dependencies:
+      '@microsoft/load-themed-styles': 1.8.78
+      '@uifabric/icons': 5.8.0
+      '@uifabric/merge-styles': 5.17.1
+      '@uifabric/styling': 5.37.0
+      '@uifabric/utilities': 5.34.2
+      prop-types: 15.7.2
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      react: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+      react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+    resolution:
+      integrity: sha512-IGN//fomGrDFjEy3zYnelNOevI2WZE5/8uj2ithEhgWS8XxFklwrXPDyiUTA/sAkViInqk5GCslylmV6TLfN2Q==
   /office-ui-fabric/2.6.1:
     resolution:
       integrity: sha1-4qyf8+T8eI2mYReN6/CUA2sKLiY=
@@ -11009,6 +11094,10 @@ specifiers:
   '@microsoft/sp-tslint-rules': 1.7.1
   '@microsoft/sp-webpart-base': 1.7.1
   '@microsoft/sp-webpart-workbench': 1.7.1
+  '@pnp/common': ^1.3.1
+  '@pnp/logging': ^1.3.1
+  '@pnp/odata': ^1.3.1
+  '@pnp/sp': ^1.3.1
   '@types/chai': 3.4.34
   '@types/es6-promise': 0.0.33
   '@types/mocha': 2.2.38
@@ -11017,6 +11106,7 @@ specifiers:
   '@types/webpack-env': 1.13.1
   ajv: ~5.2.2
   gulp: ~3.9.1
+  office-ui-fabric-react: 5.132.0
   react: 16.3.2
   react-dom: 16.3.2
   tslint: 5.9.1
