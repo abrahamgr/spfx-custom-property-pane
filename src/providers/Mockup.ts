@@ -1,17 +1,38 @@
-import { ISPList } from "../components/multiple-list-pane/IMultipleListPaneProps";
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+import { IList } from '../webparts/lists/components/IListsProps';
 
 export class Mockup{
-    public static getLists(): Promise<ISPList[]>{        
+    public static getListsOptions(): Promise<IDropdownOption[]>{        
         return new Promise(resolve =>{
             setTimeout(() => {
-                const items: ISPList[] = [
+                const items: IDropdownOption[] = [
+                    {
+                        key: "1", 
+                        text: "Documents"
+                    },
+                    {
+                        key: "2",
+                        text: "Images"
+                    }
+                ];
+                resolve(items);
+            }, 1000);
+        });
+    }
+
+    public static getListsInfo(): Promise<IList[]>{        
+        return new Promise(resolve =>{
+            setTimeout(() => {
+                const items: IList[] = [
                     {
                         id: "1",
-                        title: "Documents"
+                        title: "Dcuments",
+                        totalItems: 1
                     },
                     {
                         id: "2",
-                        title: "Images"
+                        title: "Images",
+                        totalItems: 2
                     }
                 ];
                 resolve(items);

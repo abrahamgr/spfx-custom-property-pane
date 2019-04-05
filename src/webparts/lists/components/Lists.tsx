@@ -11,6 +11,12 @@ export default class Lists extends React.Component<IListsProps, IListState> {
       lists: []
     };
   }
+
+  public componentDidMount(): void {
+    this.props.getLists().then(lists =>{
+      this.setState({ lists: lists });
+    });
+  }
   
   public render(): React.ReactElement<IListsProps> {
     return (

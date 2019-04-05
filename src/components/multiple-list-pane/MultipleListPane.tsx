@@ -24,7 +24,10 @@ export default class MultipleListPane implements IPropertyPaneField<IMultipleLis
             onRender: this.onRender.bind(this),
             label: properties.label,
             lists : properties.lists,
-            getLists: properties.getLists
+            getLists: properties.getLists,
+            onChangeList: properties.onChangeList,
+            onDispose: this._onDispose.bind(this),
+            onDeleteList: properties.onDeleteList
         };
     }
 
@@ -41,14 +44,23 @@ export default class MultipleListPane implements IPropertyPaneField<IMultipleLis
         const component = React.createElement<IMultipleListProps>(MultipleList, {
             title: this.properties.label,
             lists: this.properties.lists,
-            getLists: this.properties.getLists
+            getLists: this.properties.getLists,
+            onChangeList: this._onChangeList.bind(this),
+            onDeleteList: this._onDeleteList.bind(this)
         });
 
         ReactDOM.render(component, this.elem);
     }
+    private _onDispose(element: HTMLElement): void {
+        ReactDOM.unmountComponentAtNode(element);
+    }
 
-    private onDismount(): void {
-        ReactDOM.unmountComponentAtNode(this.elem);
+    private _onChangeList(lists: string[]): void {
+        this.properties.onChangeList(this.targetProperty, lists);
+    }
+
+    private _onDeleteList(idx: number): void {
+        this.properties.onDeleteList(this.targetProperty, idx);
     }
 
 }

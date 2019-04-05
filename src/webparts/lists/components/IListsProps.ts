@@ -6,4 +6,5 @@ export interface IList extends ISPList{
 
 export interface IListsProps {
   lists: ISPList[];
+  getLists: () => Promise<IList[]>;
 }

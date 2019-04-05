@@ -5,21 +5,24 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
 } from '@microsoft/sp-webpart-base';
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+import { update } from '@microsoft/sp-lodash-subset';
 
 import * as strings from 'ListsWebPartStrings';
 import Lists from './components/Lists';
-import { IListsProps } from './components/IListsProps';
+import { IListsProps, IList } from './components/IListsProps';
 import MultipleListPane, {} from "../../components/multiple-list-pane/MultipleListPane";
 import { ISPList } from "../../components/multiple-list-pane/IMultipleListPaneProps";
 import { ListProvider } from "../../providers/ListProvider";
 
 export interface IListsWebPartProps {
-  lists: ISPList[];
+  lists: string[];
 }
 
 export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartProps> {
 
   private _provider: ListProvider;
+  private _listPane: MultipleListPane;
 
   public onInit(): Promise<void>{
     this._provider = new ListProvider(this.context);
@@ -29,7 +32,8 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
   public render(): void {
     const element: React.ReactElement<IListsProps > = React.createElement(
       Lists, {
-        lists: []
+        lists: [],
+        getLists: this._getListsInfo.bind(this)
       }
     );
 
@@ -44,11 +48,34 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
     return Version.parse('1.0');
   }
 
-  private _getLists(): Promise<ISPList[]>{
-    return this._provider.getLists();
+  private _getListsInfo(): Promise<IList[]>{
+    return this._provider.getListsInfo(this.properties.lists);
+  }
+
+  private _getListsOptions(): Promise<IDropdownOption[]>{
+    return this._provider.getListsOptions();
+  }
+
+  private _onChangeList(property: string, lists: string[]): void {
+    update(this.properties, property, () =>{ return lists; });
+    this._listPane.render();
+  }
+
+  private _onDeleteList(property: string, idx: number): void {
+    let lists = this.properties.lists.concat([]);
+    lists.splice(idx, 1);
+    update(this.properties, property, () =>{ return lists; });
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+    this._listPane = new MultipleListPane("lists", {
+      label: "Add list",
+      lists: this.properties.lists,
+      getLists: this._getListsOptions.bind(this),
+      onChangeList: this._onChangeList.bind(this),
+      onDeleteList: this._onDeleteList.bind(this)
+    });
+
     return {
       pages: [
         {
@@ -59,11 +86,7 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                new MultipleListPane("lists", {
-                  label: "Add list",
-                  lists: this.properties.lists,
-                  getLists: this._getLists.bind(this)
-                })
+                this._listPane
               ]
             }
           ]

@@ -2,6 +2,7 @@ declare interface IListsWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
+  List: string;
 }
 
 declare module 'ListsWebPartStrings' {

@@ -1,4 +1,4 @@
-
+import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 import {
     IPropertyPaneCustomFieldProps
 } from '@microsoft/sp-webpart-base';
@@ -10,8 +10,10 @@ export interface ISPList{
 
 export interface IMultipleListPaneProps {
     label: string;
-    lists: ISPList[];
-    getLists: () => Promise<ISPList[]>;
+    lists: string[];
+    getLists: () => Promise<IDropdownOption[]>;    
+    onChangeList: (property: string, lists: string[]) => void;    
+    onDeleteList: (property: string, idx: number) => void;
 }
 
 export interface ImultipleListPaneInternalProps extends IMultipleListPaneProps, IPropertyPaneCustomFieldProps  {
