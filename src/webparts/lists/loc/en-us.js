@@ -3,6 +3,7 @@ define([], function() {
     "PropertyPaneDescription": "Lists to get information",
     "BasicGroupName": "Lists",
     "DescriptionFieldLabel": "Description Field",
-    "List": "List"
+    "List": "List",
+    "Loading": "Loading..."
   }
 });

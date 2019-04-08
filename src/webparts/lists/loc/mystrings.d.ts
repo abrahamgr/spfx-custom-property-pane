@@ -3,6 +3,7 @@ declare interface IListsWebPartStrings {
   BasicGroupName: string;
   DescriptionFieldLabel: string;
   List: string;
+  Loading: string;
 }
 
 declare module 'ListsWebPartStrings' {

@@ -27,12 +27,14 @@ export class Mockup{
                     {
                         id: "1",
                         title: "Dcuments",
-                        totalItems: 1
+                        totalItems: 1,
+                        description: "Documents for web"
                     },
                     {
                         id: "2",
                         title: "Images",
-                        totalItems: 2
+                        totalItems: 2,
+                        description: "Local images"
                     }
                 ];
                 resolve(items);

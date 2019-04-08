@@ -38,8 +38,13 @@ export class ListProvider {
                 return promise.then(() =>{
                     if(!listId)
                         return Promise.resolve();
-                    return sp.web.lists.getById(listId).select("Id", "Title", "ItemCount").get().then(listData =>{
-                        finalLists.push({ id: listId, title: listData.Title, totalItems: listData.ItemCount });
+                    return sp.web.lists.getById(listId).select("Id", "Title", "Description", "ItemCount").get().then(listData =>{
+                        finalLists.push({ 
+                            id: listId,
+                            title: listData.Title,
+                            totalItems: listData.ItemCount,
+                            description: listData.Description
+                        });
                         return null;
                     });
                 });

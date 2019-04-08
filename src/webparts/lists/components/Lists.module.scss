@@ -1,14 +1,11 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
 .lists {
-  ul {
-    list-style: none;
-    span{
-      display: inline-block;
-    }
-    .total{
-      margin-left: 10px;
-      color: #971919;
-    }
+  .header_list{
+    font-weight: 600;
+  }
+  .list_row{
+    border-bottom: 1px #afafaf solid;
+    padding: 5px 0;
   }
 }
