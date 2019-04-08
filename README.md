@@ -1,26 +1,18 @@
 ## spfx-custom-property-pane
 
-This is where you include your WebPart documentation.
+Display lists information, the lists are configured in a custom property pane. It stores an array of strings with the list ids.
+This is an example how create a custom property pane using multiples dropdown, but it can be any type of structure required.
 
-### Building the code
+### Webpart
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
+Webpart rendered.
 
-This package produces the following:
+![webpart](img-example/wp-example.jpg)
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
+### Configuration
 
-### Build options
+In the follwing image you will see multiple lists selected from the current web.
+You can select 1 or many lists in the configuration.
 
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+![webpart](img-example/wp-config.jpg)
+

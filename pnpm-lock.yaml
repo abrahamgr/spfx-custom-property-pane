@@ -3,10 +3,15 @@ dependencies:
   '@microsoft/sp-lodash-subset': 1.7.1
   '@microsoft/sp-office-ui-fabric-core': 1.7.1
   '@microsoft/sp-webpart-base': 1.7.1
+  '@pnp/common': 1.3.1
+  '@pnp/logging': 1.3.1
+  '@pnp/odata': 1.3.1
+  '@pnp/sp': 1.3.1
   '@types/es6-promise': 0.0.33
   '@types/react': 16.4.2
   '@types/react-dom': 16.0.5
   '@types/webpack-env': 1.13.1
+  office-ui-fabric-react: 5.132.0
   react: 16.3.2
   react-dom: 16.3.2
 devDependencies:
@@ -18,6 +23,9 @@ devDependencies:
   '@types/mocha': 2.2.38
   ajv: 5.2.5
   gulp: 3.9.1
+  tslint: 5.9.1
+  tslint-microsoft-contrib: 5.2.1
+  typescript: 2.4.2
 lockfileVersion: 5
 packages:
   /@babel/code-frame/7.0.0:
@@ -662,6 +670,38 @@ packages:
     dev: true
     resolution:
       integrity: sha512-bdozNnQXIKZgT3fjCcOYSZSpH7zuh+Turv8uQxzXTj5G8AzgTJ/X3GnrYDbliXKgefL8LJeIj4vwdrOnt1J+Ng==
+  /@pnp/common/1.3.1:
+    dependencies:
+      adal-angular: 1.0.17
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-YsgBtpOJolRZpZZasWf6Dj4mS5QGAnxU/0s5jgwCQZT22Lf5IhxXC2R9/fURa/DI2742i9dCED6lQGDqoEz7rA==
+  /@pnp/logging/1.3.1:
+    dependencies:
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-wIYcdNOjM6DSkWYtyGNwVe35JdVF9F58DTrdGQ40TRf5wJ9R8/bZQfq7KKJ4qYeHAOvjRT4DZwUi0Jaf+6bycg==
+  /@pnp/odata/1.3.1:
+    dependencies:
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      '@pnp/common': 1.3.1
+      '@pnp/logging': 1.3.1
+    resolution:
+      integrity: sha512-LtFOjQ8psB5IxN75q/klQ2c2OuoRtBA69adipru5giBxwbOaqbgNzObz6SH7hEr4KYbtL6//hpRof7JoSpyelA==
+  /@pnp/sp/1.3.1:
+    dependencies:
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      '@pnp/common': 1.3.1
+      '@pnp/logging': 1.3.1
+      '@pnp/odata': 1.3.1
+    resolution:
+      integrity: sha512-V0LcvymWFHNl/6dRd6uSyL47QsT8miRLMEJr3KtqZiXtgZ2Uwu2VKUwsDsUplnmMRrBv57b2ogm/6S843oZo2w==
   /@pnpm/link-bins/1.0.3_@pnpm+logger@1.0.2:
     dependencies:
       '@pnpm/logger': 1.0.2
@@ -985,6 +1025,13 @@ packages:
   /@types/z-schema/3.16.31:
     resolution:
       integrity: sha1-LrHQCl5Ow/pYx2r94S4YK2bcXBw=
+  /@uifabric/icons/5.8.0:
+    dependencies:
+      '@uifabric/styling': 5.37.0
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-EUhKxYlIPJshg4fQvCNTYSk0p7RhzEWeEAJBV4sao1SKmN0/pZBnkLbDqWjU5VUfdwZZYiIdaLRpM+pyzhniZw==
   /@uifabric/icons/5.8.0_react-dom@16.3.2+react@16.3.2:
     dependencies:
       '@uifabric/styling': 5.37.0_react-dom@16.3.2+react@16.3.2
@@ -999,6 +1046,15 @@ packages:
       tslib: 1.9.3
     resolution:
       integrity: sha512-4/EtO6Ns7kNtKxC+6InShwVQeNQEDT5H8Ex7m/i4OrT9i7csje4YwBQPkkpm31qJwEZEyD7bbAwyLezI63sLhg==
+  /@uifabric/styling/5.37.0:
+    dependencies:
+      '@microsoft/load-themed-styles': 1.8.78
+      '@uifabric/merge-styles': 5.17.1
+      '@uifabric/utilities': 5.34.2
+      tslib: 1.9.3
+    dev: false
+    resolution:
+      integrity: sha512-3hC0itW/hWSD5J4uANzUKk8XVGWUNkU+VLjEjWsQ6i5lvwFGaanR6Qy0bTkZdFGqFWMXe91CkBHV7HnvEx7tCA==
   /@uifabric/styling/5.37.0_react-dom@16.3.2+react@16.3.2:
     dependencies:
       '@microsoft/load-themed-styles': 1.8.78
@@ -1010,6 +1066,17 @@ packages:
       react-dom: '*'
     resolution:
       integrity: sha512-3hC0itW/hWSD5J4uANzUKk8XVGWUNkU+VLjEjWsQ6i5lvwFGaanR6Qy0bTkZdFGqFWMXe91CkBHV7HnvEx7tCA==
+  /@uifabric/utilities/5.34.2:
+    dependencies:
+      '@uifabric/merge-styles': 5.17.1
+      prop-types: 15.7.2
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      react: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+      react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+    resolution:
+      integrity: sha512-7LDHamnrKpY49S49Nzu1YMTuBtZIgTsQd9AuWTvXlUevD67ZyjSRnhCKlKVZHwe/Vi0jWLIodbup4p5IyRGWoQ==
   /@uifabric/utilities/5.34.2_react-dom@16.3.2+react@16.3.2:
     dependencies:
       '@uifabric/merge-styles': 5.17.1
@@ -1115,6 +1182,12 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-4rwxvHEqr/ugU6pN1GvITrXSCQ8=
+  /adal-angular/1.0.17:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-bpNuDkH5HTsqiOf/ypwvb29WLMQ=
   /after/0.8.2:
     dev: true
     resolution:
@@ -7314,6 +7387,21 @@ packages:
       react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
     resolution:
       integrity: sha512-QOYu1uf92qhTTIlBAj8teKvRpCmpliRZjynYtgeeUbDm4C4GtXdb/O1rPNFsfT0PNtPC8dCNeQ7/CXjQenUkyw==
+  /office-ui-fabric-react/5.132.0:
+    dependencies:
+      '@microsoft/load-themed-styles': 1.8.78
+      '@uifabric/icons': 5.8.0
+      '@uifabric/merge-styles': 5.17.1
+      '@uifabric/styling': 5.37.0
+      '@uifabric/utilities': 5.34.2
+      prop-types: 15.7.2
+      tslib: 1.9.3
+    dev: false
+    peerDependencies:
+      react: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+      react-dom: ^0.14.9 || ^15.0.1-0 || ^16.0.0-0
+    resolution:
+      integrity: sha512-IGN//fomGrDFjEy3zYnelNOevI2WZE5/8uj2ithEhgWS8XxFklwrXPDyiUTA/sAkViInqk5GCslylmV6TLfN2Q==
   /office-ui-fabric/2.6.1:
     resolution:
       integrity: sha1-4qyf8+T8eI2mYReN6/CUA2sKLiY=
@@ -9951,6 +10039,15 @@ packages:
   /tslib/1.9.3:
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /tslint-microsoft-contrib/5.2.1:
+    dependencies:
+      tsutils: 2.28.0
+    dev: true
+    peerDependencies:
+      tslint: ^5.1.0
+      typescript: ^2.1.0 || ^3.0.0
+    resolution:
+      integrity: sha512-PDYjvpo0gN9IfMULwKk0KpVOPMhU6cNoT9VwCOLeDl/QS8v8W2yspRpFFuUS7/c5EIH/n8ApMi8TxJAz1tfFUA==
   /tslint-microsoft-contrib/5.2.1_tslint@5.9.1+typescript@2.4.2:
     dependencies:
       tslint: 5.9.1_typescript@2.4.2
@@ -9962,6 +10059,28 @@ packages:
       typescript: ^2.1.0 || ^3.0.0
     resolution:
       integrity: sha512-PDYjvpo0gN9IfMULwKk0KpVOPMhU6cNoT9VwCOLeDl/QS8v8W2yspRpFFuUS7/c5EIH/n8ApMi8TxJAz1tfFUA==
+  /tslint/5.9.1:
+    dependencies:
+      babel-code-frame: 6.26.0
+      builtin-modules: 1.1.1
+      chalk: 2.4.2
+      commander: 2.20.0
+      diff: 3.5.0
+      glob: 7.1.3
+      js-yaml: 3.13.0
+      minimatch: 3.0.4
+      resolve: 1.10.0
+      semver: 5.7.0
+      tslib: 1.9.3
+      tsutils: 2.29.0
+    dev: true
+    engines:
+      node: '>=4.8.0'
+    hasBin: true
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev'
+    resolution:
+      integrity: sha1-ElX4ej/1frCw4fDmEKi0dIBGya4=
   /tslint/5.9.1_typescript@2.4.2:
     dependencies:
       babel-code-frame: 6.26.0
@@ -9994,6 +10113,14 @@ packages:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >= 2.4.0-dev || >= 2.5.0-dev || >= 2.6.0-dev || >= 2.7.0-dev'
     resolution:
       integrity: sha1-YBNgHjb6FP+VhBPlQdQn+4xqw0E=
+  /tsutils/2.28.0:
+    dependencies:
+      tslib: 1.9.3
+    dev: true
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
+    resolution:
+      integrity: sha512-bh5nAtW0tuhvOJnx1GLRn5ScraRLICGyJV5wJhtRWOLsxW70Kk5tZtpK3O/hW6LDnqKS9mlUMPZj9fEMJ0gxqA==
   /tsutils/2.28.0_typescript@2.4.2:
     dependencies:
       tslib: 1.9.3
@@ -10003,6 +10130,14 @@ packages:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
     resolution:
       integrity: sha512-bh5nAtW0tuhvOJnx1GLRn5ScraRLICGyJV5wJhtRWOLsxW70Kk5tZtpK3O/hW6LDnqKS9mlUMPZj9fEMJ0gxqA==
+  /tsutils/2.29.0:
+    dependencies:
+      tslib: 1.9.3
+    dev: true
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
+    resolution:
+      integrity: sha512-g5JVHCIJwzfISaXpXE1qvNalca5Jwob6FjI4AoPlqMusJ6ftFE7IkkFoMhVLRgK+4Kx3gkzb8UZK5t5yTTvEmA==
   /tsutils/2.29.0_typescript@2.4.2:
     dependencies:
       tslib: 1.9.3
@@ -10959,6 +11094,10 @@ specifiers:
   '@microsoft/sp-tslint-rules': 1.7.1
   '@microsoft/sp-webpart-base': 1.7.1
   '@microsoft/sp-webpart-workbench': 1.7.1
+  '@pnp/common': ^1.3.1
+  '@pnp/logging': ^1.3.1
+  '@pnp/odata': ^1.3.1
+  '@pnp/sp': ^1.3.1
   '@types/chai': 3.4.34
   '@types/es6-promise': 0.0.33
   '@types/mocha': 2.2.38
@@ -10967,5 +11106,9 @@ specifiers:
   '@types/webpack-env': 1.13.1
   ajv: ~5.2.2
   gulp: ~3.9.1
+  office-ui-fabric-react: 5.132.0
   react: 16.3.2
   react-dom: 16.3.2
+  tslint: 5.9.1
+  tslint-microsoft-contrib: 5.2.1
+  typescript: 2.4.2

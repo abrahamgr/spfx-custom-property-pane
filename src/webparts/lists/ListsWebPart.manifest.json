@@ -17,10 +17,10 @@
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
     "title": { "default": "Lists" },
-    "description": { "default": "Displays total items for each list" },
-    "officeFabricIconFontName": "Page",
+    "description": { "default": "Displays lists information" },
+    "officeFabricIconFontName": "CustomList",
     "properties": {
-      "description": "Lists"
+      "lists": []
     }
   }]
 }
