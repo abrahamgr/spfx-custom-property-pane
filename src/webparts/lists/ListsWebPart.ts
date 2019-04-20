@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
+  BaseClientSideWebPart
 } from '@microsoft/sp-webpart-base';
+import { IPropertyPaneConfiguration } from "@microsoft/sp-property-pane";
 import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 import { update } from '@microsoft/sp-lodash-subset';
 
