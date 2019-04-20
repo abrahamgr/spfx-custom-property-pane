@@ -1,7 +1,5 @@
 import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-import {
-    IPropertyPaneCustomFieldProps
-} from '@microsoft/sp-webpart-base';
+import { IPropertyPaneCustomFieldProps } from "@microsoft/sp-property-pane";
 
 export interface ISPList{
     id: string;

@@ -1,9 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {
-    IPropertyPaneField,
-    PropertyPaneFieldType
-  } from '@microsoft/sp-webpart-base';
+import { IPropertyPaneField, PropertyPaneFieldType } from "@microsoft/sp-property-pane";
 
 import { IMultipleListPaneProps, ImultipleListPaneInternalProps } from "./IMultipleListPaneProps";
 import MultipleList from "../multiple-list/MultipleList";
