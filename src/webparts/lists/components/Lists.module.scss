@@ -1,11 +1,29 @@
-@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
 
 .lists {
-  .header_list{
-    font-weight: 600;
-  }
-  .list_row{
-    border-bottom: 1px #afafaf solid;
-    padding: 5px 0;
+  .grid {
+    @include ms-Grid;
+
+    .col3 {
+      @include ms-Grid-col;
+      @include ms-sm3;
+      @include ms-md3;
+      @include ms-lg3;
+
+    }
+    .col6 {
+      @include ms-Grid-col;
+      @include ms-sm6;
+      @include ms-md6;
+      @include ms-lg6;
+    }
+    .header_list{
+      font-weight: 600;
+    }
+    .list_row{
+      @include ms-Grid-row;
+      border-bottom: 1px #afafaf solid;
+      padding: 5px 0;
+    }
   }
 }

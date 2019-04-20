@@ -31,17 +31,17 @@ export default class Lists extends React.Component<IListsProps, IListState> {
       {!this.state.loading &&
         <React.Fragment>
           <h4>Lists</h4>
-          <div className="ms-Grid">
-            <div className={`ms-Grid-row ${styles.header_list} ${styles.list_row}`}>
-              <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3">Title</div>
-              <div className="ms-Grid-col ms-sm6 ms-md6 ms-lg6">Description</div>
-              <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3">Total items</div>
+          <div className={styles.grid}>
+            <div className={`${styles.header_list} ${styles.list_row}`}>
+              <div className={styles.col3}>Title</div>
+              <div className={styles.col6}>Description</div>
+              <div className={styles.col3}>Total items</div>
             </div>
             {this.state.lists.map((list, idx) => 
-              <div key={`${idx}_${list.id}`} className={`ms-Grid-row ${styles.list_row}`} >
-                <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3">{list.title}</div>
-                <div className="ms-Grid-col ms-sm6 ms-md6 ms-lg6">{list.description}</div>
-                <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3">{list.totalItems}</div>
+              <div key={`${idx}_${list.id}`} className={`${styles.list_row}`} >
+                <div className={styles.col3}>{list.title}</div>
+                <div className={styles.col6}>{list.description}</div>
+                <div className={styles.col3}>{list.totalItems}</div>
               </div>
             )}
           </div>
