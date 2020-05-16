@@ -12,7 +12,6 @@ import * as strings from 'ListsWebPartStrings';
 import Lists from './components/Lists';
 import { IListsProps, IList } from './components/IListsProps';
 import MultipleListPane, {} from "../../components/multiple-list-pane/MultipleListPane";
-import { ISPList } from "../../components/multiple-list-pane/IMultipleListPaneProps";
 import { ListProvider } from "../../providers/ListProvider";
 
 export interface IListsWebPartProps {
@@ -32,7 +31,7 @@ export default class ListsWebPart extends BaseClientSideWebPart<IListsWebPartPro
   public render(): void {
     const element: React.ReactElement<IListsProps > = React.createElement(
       Lists, {
-        lists: [],
+        lists: [], 
         getLists: this._getListsInfo.bind(this)
       }
     );
